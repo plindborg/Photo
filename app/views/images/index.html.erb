@@ -1,0 +1,19 @@
+<h1>Listing images</h1>
+
+<% @images.each do |image| %>
+  <div class="imagebox">
+		<div class="image">
+			<%= image_tag image.picture.url(:thumb), :class => "image" %> 
+		</div>
+		<div class="imagetext">
+			<%= image.title %>
+			<%= image.description %>
+			<%= link_to 'Show', image %>
+			<%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
+		</div>
+	</div>
+<% end %>
+
+<br />
+
+<%= link_to 'New Image', new_image_path %>
