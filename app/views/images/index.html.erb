@@ -8,6 +8,11 @@
 		<div class="imagetext">
 			<%= image.title %>
 			<%= image.description %>
+			<div class="exif">Exif</div>
+			<div class="exifdata">
+				Cameramodel:
+				<%= EXIFR::JPEG.new('/Users/lindborg/Downloads/DSC_0072.JPG').model %><br>
+			</div>
 			<%= link_to 'Show', image %>
 			<%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
 		</div>
