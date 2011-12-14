@@ -1,10 +1,10 @@
 <h1>Listing images</h1>
-
+<div id="content">
 <% @images.each do |image| %>
 		<div class="imagebox">
 		<div class="image">
 			<a href="<%= image.picture.url %>" class="fancybox" title=<%= image.title %> >
-				<%= image_tag image.picture.url(:thumb), :class => "image" %> 
+				<%= image_tag image.picture.url(:medium), :class => "image" %> 
 			</a>		
 		</div>
 		<div class="imagetext">
@@ -29,6 +29,7 @@
 		</div>
 	</div>
 <% end %>
+</div>
 
 <br />
 
