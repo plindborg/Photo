@@ -1,11 +1,25 @@
 Photo::Application.routes.draw do
-  resources :users
+  get 'admin' => "admin#index"
 
+  #get "sessions/new"
+
+  #get "sessions/create"
+
+  #get "sessions/destroy"
+
+	controller :sessions do
+		get 'login' => :new
+		post 'login' => :create 
+		delete 'logout' => :destroy
+	end
+	
+
+  resources :users
   resources :images
 
   get "home/index"
 	
-	root :to => "home#index"
+	root :to => "images#index"
 	
 
   # The priority is based upon order of creation:
