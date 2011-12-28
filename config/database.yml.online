@@ -1,0 +1,5 @@
+production:
+  adapter: mysql
+  database: p4r15469_photo 
+  username: p4r15469_dlipa 
+  password: 1Z_TC+f*PuO?

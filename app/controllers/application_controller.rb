@@ -1,6 +1,16 @@
 class ApplicationController < ActionController::Base
+	helper_method :getCurrentUser?
   protect_from_forgery
 	before_filter :authorize
+
+	def getCurrentUser?
+		user = User.find_by_id(session[:user_id])
+		if user == nil
+			"guest"
+		else
+			 user.name
+		end
+	end
 
 	protected
 		def authorize

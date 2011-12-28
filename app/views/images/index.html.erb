@@ -2,7 +2,7 @@
 <div id="content">
 <% @images.each do |image| %>
 		<div class="imagebox">
-		<div class="image">
+		<div class="picture">
 			<a href="<%= image.picture.url %>" class="fancybox" title=<%= image.title %> >
 				<%= image_tag image.picture.url(:medium), :class => "image" %> 
 			</a>		
@@ -24,8 +24,10 @@
 
 				</div>
 			</div>
-			<%= link_to 'Show', image %>
-			<%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
+			<% if session[:user_id] %>
+				<%= link_to 'Show', image %>
+				<%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %>
 		</div>
 	</div>
 <% end %>
@@ -33,4 +35,3 @@
 
 <br />
 
-<%= link_to 'New Image', new_image_path %>
