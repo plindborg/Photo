@@ -1,6 +1,6 @@
 .imagebox
 {
-	width:220px;
+	width:200px;
 	padding:10px;
 	border:5px solid gray;
 	background: gray;
@@ -9,7 +9,7 @@
 	box-shadow: 10px 10px 5px #888;
 }
 
-.picture
+.image
 {
 	display: block;
   margin-left: auto;
@@ -27,10 +27,9 @@
 	font-size:10px;
 }
 
-#content
+/*#content
 {
 		width: 300px;
     margin-left: auto;
-    margin-right: auto;
-	
-}
+    margin-right: auto;	
+}*/

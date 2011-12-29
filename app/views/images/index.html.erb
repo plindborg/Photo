@@ -1,8 +1,10 @@
-<h1>Listing images</h1>
 <div id="content">
+<table>
+<tr>
 <% @images.each do |image| %>
-		<div class="imagebox">
-		<div class="picture">
+<td>
+	<div class="imagebox">
+		<div class="image">
 			<a href="<%= image.picture.url %>" class="fancybox" title=<%= image.title %> >
 				<%= image_tag image.picture.url(:medium), :class => "image" %> 
 			</a>		
@@ -11,6 +13,7 @@
 			<%= image.title %>
 			<br>
 			<%= image.description %>
+			<br>
 			<div class="exif" id="exif_<%=image.id%>" >Exif
 				<div class="exifdata ">
 					Cameramodel:
@@ -21,7 +24,18 @@
 					<br>
 					Exposure:
 					<%= EXIFR::JPEG.new(image.picture.path).exposure_time.to_s  %>
-
+					<br>
+					Width:
+					<%= EXIFR::JPEG.new(image.picture.path).width %>
+					<br>
+					Height:
+					<%= EXIFR::JPEG.new(image.picture.path).height  %>
+					<br>					
+					Shutter:
+					<%= EXIFR::JPEG.new(image.picture.path).shutter_speed_value.to_s%>
+					<br>					
+					Aperture:
+					<%= EXIFR::JPEG.new(image.picture.path).aperture_value.to_s%>
 				</div>
 			</div>
 			<% if session[:user_id] %>
@@ -30,8 +44,10 @@
 			<% end %>
 		</div>
 	</div>
+</td>
 <% end %>
+</tr>
+</table>
 </div>
 
-<br />
 

@@ -3,9 +3,9 @@ $(document).ready(function() {
 		$(this).children('.exifdata').toggle();
 	});
 
-	//$('.image').click(function(){
+	$('.image').click(function(){
 		$("a.fancybox").fancybox();
-	//});
+	});
 
 });
 
