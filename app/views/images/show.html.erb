@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<a href="<%= @image.picture.url %>"§ title=<%= @image.title %> >
+	<%= image_tag @image.picture.url(:medium), :class => "image" %> 
+</a>
+
 <p>
   <b>Title:</b>
   <%= @image.title %>
@@ -9,8 +13,30 @@
   <b>Description:</b>
   <%= @image.description %>
 </p>
-
-<%= image_tag @image.picture.url(:medium) %>
-
+	
+<div class="exif" id="exif_<%=@image.id%>" >Exif
+	<div class="exifdata ">
+		Cameramodel:
+		<%= EXIFR::JPEG.new(@image.picture.path).model %>
+		<br>
+		Date:
+		<%= EXIFR::JPEG.new(@image.picture.path).date_time  %>
+		<br>
+		Exposure:
+		<%= EXIFR::JPEG.new(@image.picture.path).exposure_time.to_s  %>
+		<br>
+		Width:
+		<%= EXIFR::JPEG.new(@image.picture.path).width %>
+		<br>
+		Height:
+		<%= EXIFR::JPEG.new(@image.picture.path).height  %>
+		<br>					
+		Shutter:
+		<%= EXIFR::JPEG.new(@image.picture.path).shutter_speed_value.to_s%>
+		<br>					
+		Aperture:
+		<%= EXIFR::JPEG.new(@image.picture.path).aperture_value.to_s%>
+	</div>
+</div>
 <%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>

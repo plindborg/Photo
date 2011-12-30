@@ -16,6 +16,8 @@
   img {
     float: left;
   }
+
+
 }
 
 #notice {
@@ -52,6 +54,13 @@
           color: #bfb;
           font-size: small;
         }
+			}
+		}
+	
+		#login_logout{
+			a {
+				//float:right;
+				font:smaller;
 			}
 		}
 	}

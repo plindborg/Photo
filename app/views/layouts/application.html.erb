@@ -10,18 +10,27 @@
 <div id="banner">
 	<%= image_tag("logo.png") %>
 	<%= @page_title || "Photo" %>
+	<br>
+
 </div>
 <div id="columns">
 	<div id="side"> 
 		<ul>
-			<li><a href="http://www....">Home</a></li>
+			<li><%= link_to "Hem", root_path %></li>
 			<% if session[:user_id] %>
 				<li><%= link_to 'New Image', new_image_path %></li>
 			<% end %> 
 			<li><a href="http://www..../news">News</a></li>
-		 	<li><a href="http://www..../contact">Contact</a></li>
-			Logged in as <%= getCurrentUser? %>
+		 	<li><a href="http://www..../contact">Contact</a></li>			
 		</ul> 
+		Logged in as <%= getCurrentUser? %>
+		<div id="login_logout">
+			<% if isLoggedIn? %>
+				<%= link_to "Log in", login_path, method: :get %>
+			<% else %>
+				<%= link_to "Log out", logout_path, method: :delete %>
+			<% end %>
+		</div
 	</div>
 	<div id="main">
 		<%= yield %>
