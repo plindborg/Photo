@@ -45,5 +45,7 @@
 		<%= EXIFR::JPEG.new(@image.picture.path).aperture_value.to_s%>
 	</div>
 </div>
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<% unless isLoggedIn? %>
+	<%= link_to 'Edit', edit_image_path(@image) %> |
+	<%= link_to 'Back', images_path %>
+<% end %>
