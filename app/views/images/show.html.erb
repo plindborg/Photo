@@ -6,6 +6,7 @@
 		<%= image_tag @image.picture.url(:medium), :class => "image" %> 
 	</a>
 </div>
+<div class="imagebox_show">
 <p>
   <b>Title:</b>
   <%= @image.title %>
@@ -19,6 +20,11 @@
 <p>
   <b>Description:</b>
   <%= @image.description %>
+</p>
+
+<p>
+	<b>Photographer</b>
+	<%= @image.photographer %>
 </p>
 	
 <div class="exif" id="exif_<%=@image.id%>" >Exif
@@ -49,3 +55,4 @@
 	<%= link_to 'Edit', edit_image_path(@image) %> |
 	<%= link_to 'Back', images_path %>
 <% end %>
+</div>

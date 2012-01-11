@@ -6,6 +6,8 @@
 
 #ingore files
 *.swp
+*.online
+*.tar
 
 # Ignore bundler config
 /.bundle

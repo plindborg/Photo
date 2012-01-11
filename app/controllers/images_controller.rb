@@ -42,7 +42,7 @@ class ImagesController < ApplicationController
   # POST /images.json
   def create
     @image = Image.new(params[:image])
-
+		@image.directory_id = 1
     respond_to do |format|
       if @image.save
         format.html { redirect_to @image, notice: 'Image was successfully created.' }
@@ -58,7 +58,6 @@ class ImagesController < ApplicationController
   # PUT /images/1.json
   def update
     @image = Image.find(params[:id])
-
     respond_to do |format|
       if @image.update_attributes(params[:image])
         format.html { redirect_to @image, notice: 'Image was successfully updated.' }

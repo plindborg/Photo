@@ -1,4 +1,6 @@
 Photo::Application.routes.draw do
+  resources :directories
+
   get 'admin' => "admin#index"
 
   #get "sessions/new"
@@ -14,8 +16,10 @@ Photo::Application.routes.draw do
 	end
 	
 
-  resources :users
+	resources :users
   resources :images
+	
+	
 
   get "home/index"
 	

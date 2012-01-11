@@ -1,0 +1,17 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+<p>
+  <b>Name:</b>
+  <%= @directory.name %>
+</p>
+	<% @directory.images.each do |image| %>
+		<%= image.title %><br>	
+	<% end %>
+
+
+
+<% unless isLoggedIn? %>
+	<%= link_to 'Edit', edit_directory_path(@directory) %> |
+	<%= link_to 'Back', directories_path %>
+<% end %>
