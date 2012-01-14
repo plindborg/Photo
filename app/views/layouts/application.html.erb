@@ -27,9 +27,9 @@
 		Logged in as <%= getCurrentUser? %>
 		<div id="login_logout">
 			<% if isLoggedIn? %>
-				<%= link_to "Log in", login_path, method: :get %>
+				<%= link_to "Log out", login_path, method: :get %>
 			<% else %>
-				<%= link_to "Log out", logout_path, method: :delete %>
+				<%= link_to "Log in", logout_path, method: :delete %>
 			<% end %>
 		</div
 	</div>

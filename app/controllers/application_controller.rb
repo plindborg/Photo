@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
 
 	def isLoggedIn?
 		if session[:user_id].nil?
-			return true
+			return false
 		end
-		return false
+		return true
 	end
 
 	protected

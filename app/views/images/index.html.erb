@@ -9,7 +9,7 @@
 				<br>
 				<%= image.description %>
 				<br>
-				<% if session[:user_id] %>	
+				<% if isLoggedIn? %>	
 					<%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
 				<% end %>
 			</div>
