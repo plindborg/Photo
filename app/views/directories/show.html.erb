@@ -7,9 +7,13 @@
 </p>
 	<% @directory.images.each do |image| %>
 		<%= image.title %><br>	
+
+		<div class="show">
+			<a href="<%= image.picture.url %>" title=<%= image.title %> >
+				<%= image_tag image.picture.url(:medium), :class => "image" %> 
+			</a>
+		</div>
 	<% end %>
-
-
 
 <% unless isLoggedIn? %>
 	<%= link_to 'Edit', edit_directory_path(@directory) %> |
